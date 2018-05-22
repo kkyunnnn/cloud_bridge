@@ -1,0 +1,58 @@
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<!-- 
+<tiles-definitions>
+
+	
+	<definition name="front.none" template="/WEB-INF/tiles/front/layout/none.jsp">
+	</definition>
+	
+	<definition name="front.ajax" template="/WEB-INF/tiles/front/layout/ajax.jsp">
+	</definition>
+
+    <definition name="front.base" template="/WEB-INF/tiles/front/layout/default.jsp">
+        <put-attribute name="header" value="/WEB-INF/tiles/front/layout/header.jsp"/>        
+        <put-attribute name="footer" value="/WEB-INF/tiles/front/layout/footer.jsp"/>
+    </definition>    
+
+    <definition name="front/*" extends="front.none">
+        <put-attribute name="body" value="/WEB-INF/view/front/{1}.jsp"/>
+    </definition>
+    
+    <definition name="front/ajax/*" extends="front.ajax">
+        <put-attribute name="body" value="/WEB-INF/view/front/ajax/{1}.jsp"/>
+    </definition>
+    
+    <definition name="front/main" extends="front.base">
+        <put-attribute name="body" value="/WEB-INF/view/front/main.jsp"/>
+    </definition>
+    
+    <definition name="front/*/*" extends="front.base">
+        <put-attribute name="body" value="/WEB-INF/view/front/{1}/{2}.jsp"/>
+    </definition>
+     
+    <definition name="front/*/*/*" extends="front.base" >
+        <put-attribute name="body" value="/WEB-INF/view/front/{1}/{2}/{3}.jsp"/>
+    </definition>   
+    
+</tiles-definitions>
+--> 
+
+<tiles-definitions>
+    <definition name="front.base" template="/WEB-INF/tiles/layout/layout.jsp">
+        <put-attribute name="header" value="/WEB-INF/tiles/layout/header.jsp"/>        
+        <put-attribute name="footer" value="/WEB-INF/tiles/layout/footer.jsp"/>
+        <put-attribute name="left-menu" value="/WEB-INF/tiles/layout/left-menu.jsp"/>
+    </definition>  
+      
+    <definition name="main" extends="front.base">
+        <put-attribute name="contents" value="/WEB-INF/views/home.jsp"/>
+    </definition>
+    
+    <definition name="*/*" extends="front.base">
+        <put-attribute name="contents" value="/WEB-INF/views/{1}/{2}.jsp"/>
+    </definition>
+     
+    <definition name="*/*/*" extends="front.base" >
+        <put-attribute name="contents" value="/WEB-INF/views/{1}/{2}/{3}.jsp"/>
+    </definition>    
+</tiles-definitions>
