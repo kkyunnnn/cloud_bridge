@@ -1,6 +1,10 @@
 
 # Created by https://www.gitignore.io/api/java,maven,gradle,eclipse,intellij
-
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
 ### Eclipse ###
 
 .metadata
